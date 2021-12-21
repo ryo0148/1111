@@ -61,6 +61,7 @@
         const prediction = await model.predict(webcam.canvas);
         if(prediction[0].probability.toFixed(2) > 0.6){
             labelContainer.childNodes[0].innerHTML = "カギがしまってます"
+            window.location.href = "./close.html";
         }else if(prediction[1].probability.toFixed(2) > 0.6){
                 labelContainer.childNodes[1].innerHTML = "カギが空いています"
         }
